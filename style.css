@@ -1,0 +1,247 @@
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+img {
+  max-width: 100%;
+}
+a {
+  text-decoration: none;
+}
+/* Header */
+.header {
+  background-color: black;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+.header.active-blur {
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(13.5px);
+  -webkit-backdrop-filter: blur(13.5px);
+}
+.title {
+  color: #e8e400;
+  font-family: "Anybody";
+  text-align: center;
+  padding: 20px;
+  font-size: 3rem;
+}
+/* Introduction */
+.grid-intro {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  max-width: 1200px;
+  margin: 60px auto;
+  align-items: center;
+  padding: 20px;
+}
+.grid-intro p {
+  font-size: 2rem;
+  font-family: "Roboto Slab", serif;
+}
+.grid-intro img {
+  max-width: 100%;
+}
+/* Offers */
+.bg-offer {
+  background-color: #1e1e1e;
+}
+.grid-offer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 100px;
+}
+.grid-offer h2 {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 2.5rem;
+  color: #fff;
+  padding-bottom: 40px;
+  font-family: "Roboto", sans-serif;
+}
+.grid-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 15px;
+}
+.grid-item h3 {
+  color: #e0e0e0;
+  font-size: 2rem;
+}
+.grid-item p {
+  color: #b8b8b8;
+  font-family: "Roboto Slab", serif;
+  font-size: 1.5rem;
+  grid-column: 1 / -1;
+  padding-left: 10px;
+}
+/* Plans */
+.bg-plans {
+  background-color: #000;
+}
+.grid-plans {
+  display: grid;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: flex-start;
+  padding: 60px;
+}
+.grid-plans h2 {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 2.5rem;
+  padding-top: 20px;
+  color: #fff;
+  font-family: "Roboto", sans-serif;
+}
+.basic-plan li {
+  color: #a3a3a3;
+  font-size: 1.2rem;
+  font-family: "Roboto Slab", serif;
+}
+.pro-plan li {
+  color: #a3a3a3;
+  font-size: 1.4rem;
+  font-family: "Roboto Slab", serif;
+}
+.basic-plan li + li,
+.pro-plan li + li {
+  padding-top: 20px;
+}
+.basic-plan {
+  background-color: #141414;
+  padding: 20px;
+}
+.basic-plan h3 {
+  color: #b8b8b8;
+  padding: 20px 0;
+  font-size: 2rem;
+  font-family: "Roboto", sans-serif;
+}
+.basic-plan a {
+  display: inline-block;
+  background-color: #b8b8b8;
+  padding: 1rem 2rem;
+  color: #292929;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 4px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.pro-plan {
+  background-color: #141414;
+  padding: 20px;
+}
+.pro-plan h3 {
+  color: #f9fe00;
+  padding: 20px 0;
+  font-size: 2.2rem;
+  font-family: "Roboto", sans-serif;
+}
+.pro-plan a {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background: linear-gradient(#e8ed00, #cba033);
+  color: #141414;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 4px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+/* Footer */
+.footer {
+  padding: 30px;
+}
+.footer p {
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: "Roboto", sans-serif;
+  text-decoration: underline;
+}
+/* JS Effect */
+.js-scroll {
+  opacity: 0;
+  transition: 0.5s;
+  transform: translate3d(-30px, 0, 0);
+}
+.js-scroll.active {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+/* Resposiviness */
+@media (max-width: 750px) {
+  .grid-intro,
+  .grid-offer,
+  .grid-plans {
+    grid-template-columns: 1fr;
+  }
+  .grid-intro {
+    margin: 20px;
+    justify-items: center;
+  }
+  .grid-intro img {
+    padding-top: 40px;
+  }
+  .grid-offer {
+    padding: 50px;
+  }
+  .grid-item {
+    gap: 10px;
+  }
+  .grid-offer h2 {
+    padding-bottom: 0;
+    font-size: 2rem;
+  }
+  .grid-intro p,
+  .grid-item h3,
+  .basic-plan h3 {
+    font-size: 1.5rem;
+  }
+  .grid-item p,
+  .pro-plan li {
+    font-size: 1rem;
+  }
+  .grid-plans {
+    padding: 30px;
+  }
+  .grid-plans h2 {
+    font-size: 2rem;
+  }
+  .basic-plan li {
+    font-size: 0.9rem;
+  }
+  .pro-plan h3 {
+    font-size: 1.7rem;
+  }
+  .basic-plan a,
+  .pro-plan a {
+    padding: 0.8rem 1.8rem;
+    font-size: 1.2rem;
+    margin-top: 20px;
+  }
+  .footer p {
+    font-size: 1rem;
+  }
+}
